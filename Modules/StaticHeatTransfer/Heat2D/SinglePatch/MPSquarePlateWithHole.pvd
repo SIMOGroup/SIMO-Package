@@ -1,0 +1,9 @@
+<?xml version="1.0"?> 
+<VTKFile type="Collection" version="0.1"> 
+<Collection> 
+<DataSet part="1" file="MPSquarePlateWithHole_1.vts"/> 
+<DataSet part="2" file="MPSquarePlateWithHole_2.vts"/> 
+<DataSet part="3" file="MPSquarePlateWithHole_3.vts"/> 
+<DataSet part="4" file="MPSquarePlateWithHole_4.vts"/> 
+</Collection>
+</VTKFile> 

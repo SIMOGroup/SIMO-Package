@@ -1,0 +1,1 @@
+Quadrature rule e12 p3 r0 is passed: true - residual 3.9968028886505635e-15 - sym 1.466850003875454e-15 

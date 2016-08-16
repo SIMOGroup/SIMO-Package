@@ -1,0 +1,72 @@
+\begin{tikzpicture}
+    [x={(-0.5cm,-0.5cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+    scale=1, thin, double, every node/.append style={transform shape}, on grid]
+    \newcommand\drawface{\draw[fill=gray!10] (0, 0) rectangle (6, 2.5)}
+    % face #1
+    {\fontencoding{T1}\selectfont \ttfamily
+    \begin{scope}[canvas is yz plane at x=-1]
+        \drawface;
+%        \foreach \x in {0, 2, ..., 6}
+%        {
+%            \draw (\x, 0) -- (\x, 4);
+%        }
+%        \foreach \y in {0, 1, ..., 4}
+%        {
+%            \draw (0, \y) -- (6, \y);
+%        }
+        \node at (1, 2) {1.5000};
+        \node at (1, 1.5) {0.0000};
+        \node at (1, 1) {0.0000};
+        \node at (1, 0.5) {1.0000};
+
+        \node at (3, 2) {1.0607};
+        \node at (3, 1.5) {0.0000};
+        \node at (3, 1) {0.7071};
+        \node at (3, 0.5) {0.7071};
+
+        \node at (5, 2) {1.5000};
+        \node at (5, 1.5) {1.0000};
+        \node at (5, 1) {1.0000};
+        \node at (5, 0.5) {1.0000};
+        
+        \node [rectangle, anchor=west, fill=red!50, fill opacity=0.70, align=center, above] at (1, 2.5) {$\mathbf{P}_4$};
+        \node [rectangle, anchor=west, fill=red!50, fill opacity=0.70, align=center, above] at (3, 2.5) {$\mathbf{P}_5$};
+        \node [rectangle, anchor=west, fill=red!50, fill opacity=0.70, align=center, above] at (5, 2.5) {$\mathbf{P}_6$};
+    \end{scope}
+
+    \begin{scope}[canvas is yz plane at x=1]
+    \drawface;
+%    \foreach \x in {0, 2, ..., 6}
+%    {
+%        \draw (\x, 0) -- (\x, 4);
+%    }
+%    \foreach \y in {0, 1, ..., 4}
+%    {
+%        \draw (0, \y) -- (6, \y);
+%    }
+    \node at (1, 2) {0.0000};
+    \node at (1, 1.5) {0.0000};
+    \node at (1, 1) {0.0000};
+    \node at (1, 0.5) {1.0000};
+
+    \node at (3, 2) {0.0000};
+    \node at (3, 1.5) {0.0000};
+    \node at (3, 1) {0.7071};
+    \node at (3, 0.5) {0.7071};
+
+    \node at (5, 2) {0.0000};
+    \node at (5, 1.5) {1.0000};
+    \node at (5, 1) {1.0000};
+    \node at (5, 0.5) {1.0000};
+
+    \node [rectangle, anchor=west, fill=red!50, fill opacity=0.70, align=center, text width=1cm, left] at (0, 2.0) {x w};
+    \node [rectangle, anchor=west, fill=red!50, fill opacity=0.70, align=center, text width=1cm, left] at (0, 1.5) {y w};
+    \node [rectangle, anchor=west, fill=red!50, fill opacity=0.70, align=center, text width=1cm, left] at (0, 1.0) {z w};
+    \node [rectangle, anchor=west, fill=red!50, fill opacity=0.70, align=center, text width=1cm, left] at (0, 0.5) {w};
+    
+    \node [rectangle, anchor=west, fill=red!50, fill opacity=0.70, align=center, below] at (1, 0) {$\mathbf{P}_1$};
+    \node [rectangle, anchor=west, fill=red!50, fill opacity=0.70, align=center, below] at (3, 0) {$\mathbf{P}_2$};
+    \node [rectangle, anchor=west, fill=red!50, fill opacity=0.70, align=center, below] at (5, 0) {$\mathbf{P}_3$};
+    \end{scope}
+    }
+\end{tikzpicture} 

@@ -1,0 +1,60 @@
+SIMOPackage ChangeLog
+
+====================================================================
+06-Feb-2016
+	* Added 
+		Folder "GradientElasticity"
+		CantiliverBeam_Grad.m
+		calcLocalStiffnessMatrices2D_Gradient.m
+		applyDrchltBdryVals.m
+	
+	* Improved
+		Mesh2D.m
+	
+	* Renamed
+		ElastMat.m to getElastMat.m
+
+====================================================================
+25-Sep-2015
+	* Added applyNewmannBdryVals.m for applying Newmann BCs of 2D and
+	3D problems
+	* Removed 
+			MPImposeNewmann2DScalar.m
+			MPImposeNewmann2DVector.m
+			MPImposePress2D.m
+			MPImposePress3D.m
+			SPImposeNewmann2DVector.m
+			SPImposeNewmann3DScalar.m
+			SPImposePress2D.m
+			SPImposePress3D.m
+====================================================================
+15-Sep-2015
+	* Improved calcLocalConductionMatrices1D.m to work with cooling
+	fin problem.
+	* Added SPConcretePier.m, SPConcretePierExactSolution.m in
+	Elasticity1D
+	* Added SPCoolingFin1D.m in Heat1D
+====================================================================
+06-Sep-2015
+	* Removed
+			ColloBasis.m
+			MPImposeDrchlt2DScalar.m
+			MPImposeDrchlt2DVector.m
+			MPImposeDrchlt3DVector.m
+			SPImposeDrchlt2DScalar.m
+			SPImposeDrchlt2DScalarCouple.m
+			SPImposeDrchlt2DVector.m
+	* Added projDrchltBdryVals.m for applying Dirichlet BCs of 2D and 
+	3D problem (single patch and multiple patches)
+	* Added convertTo2DArrays.m
+====================================================================
+26-May-2015
+	* Added KirchhoffPlate folder (Modules\Elasticity\KirchhoffPlate)
+	* Added findConn.m, SPAnnularPlate.m, SPAnnularPlateExactSolu.m
+	* Upgraded Mesh2D.m and exportToVTK.m to work with plate problems
+	* Added option to plot control point numbering in PlotCtrlPts.m
+	* Improved SPToVTK.m
+====================================================================
+23-May-2015
+	* Improved Rationalize.m
+

@@ -1,0 +1,11 @@
+<?xml version="1.0"?> 
+<VTKFile type="Collection" version="0.1"> 
+<Collection> 
+<DataSet part="1" file="MPGroovedRectPlateCollapse_1.vts"/> 
+<DataSet part="2" file="MPGroovedRectPlateCollapse_2.vts"/> 
+<DataSet part="3" file="MPGroovedRectPlateCollapse_3.vts"/> 
+<DataSet part="4" file="MPGroovedRectPlateCollapse_4.vts"/> 
+<DataSet part="5" file="MPGroovedRectPlateCollapse_5.vts"/> 
+<DataSet part="6" file="MPGroovedRectPlateCollapse_6.vts"/> 
+</Collection>
+</VTKFile> 
