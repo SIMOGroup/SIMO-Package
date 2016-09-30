@@ -2,6 +2,23 @@ function Mesh = Mesh2D(NURBS, lab)
 % Mesh = Mesh2D(NURBS, type)
 % modified from igafem package (Vinh Phu Nguyen)
 
+%{
+Copyright (C) <2014-2016>  <Khanh Chau-Nguyen, Hung Nguyen-Xuan>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}
+
 if strcmp(lab, 'ScalarField')
     Dof = 1; % number of degree of freedom
 elseif strcmp(lab, 'VectorField')
@@ -85,13 +102,6 @@ Mesh.Boundary(1).NextLayerDofs.CompDofs{1} = sub2ind([mcp, ncp], 2 * ones(1, ncp
 Mesh.Boundary(2).NextLayerDofs.CompDofs{1} = sub2ind([mcp, ncp], (mcp - 1) * ones(1, ncp), 1 : ncp)';
 Mesh.Boundary(3).NextLayerDofs.CompDofs{1} = sub2ind([mcp, ncp], 1 : mcp, 2 * ones(1, mcp))';
 Mesh.Boundary(4).NextLayerDofs.CompDofs{1} = sub2ind([mcp, ncp], 1 : mcp, (ncp - 1) * ones(1, mcp))';
-    
-% if strcmp(lab, 'Plate') % Find dofs for clamped BCs
-%     Mesh.Boundary(1).NextLayerDofs = sub2ind([mcp, ncp], 2 * ones(1, ncp), 1 : ncp)';
-%     Mesh.Boundary(2).NextLayerDofs = sub2ind([mcp, ncp], (mcp - 1) * ones(1, ncp), 1 : ncp)';
-%     Mesh.Boundary(3).NextLayerDofs = sub2ind([mcp, ncp], 1 : mcp, 2 * ones(1, mcp))';
-%     Mesh.Boundary(4).NextLayerDofs = sub2ind([mcp, ncp], 1 : mcp, (ncp - 1) * ones(1, mcp))';
-% end
 
 for iSide = 1 : 4
     ind = mod(floor((iSide + 1) / 2), 2) + 1;

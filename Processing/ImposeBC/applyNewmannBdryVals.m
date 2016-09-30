@@ -38,6 +38,24 @@ function [Vals, GDofs] = applyNewmannBdryVals(NURBS, Mesh, g, Refs, LAB, varargi
 %       Vals: evaluated coefficent values corresponding to these degrees
 %       of freedom
 % ------------------------------------------------------------------
+
+%{
+Copyright (C) <2014-2016>  <Khanh Chau-Nguyen, Hung Nguyen-Xuan>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}
+
 GDofs = []; GVals = []; GIdcs = [];
 assert(isa(g, 'function_handle'), 'g must be a function handle')
 assert(ischar(LAB), 'You must specify the LABEL keyword')

@@ -1,6 +1,6 @@
 function [nb, Qw] = NURBSDecompCurv(n, p, KntVect, Pw)
 % [nb, Qw] = NURBSDecompCurv(n, p, KntVect, Pw)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -------------------------------------------------------------------------
 % Decompose curve into Bezier segments
 % ---------------------------------------------------------------
 % Input: 
@@ -14,7 +14,24 @@ function [nb, Qw] = NURBSDecompCurv(n, p, KntVect, Pw)
 %       Qw: control points of bezier segments.
 % ---------------------------------------------------------------
 % Based on Algorithm A5.6 from ``The NURBS BOOK'' pg173.
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -------------------------------------------------------------------------
+
+%{
+Copyright (C) <2014-2016>  <Khanh Chau-Nguyen, Hung Nguyen-Xuan>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}
 
 m = n + p;
 a = p;

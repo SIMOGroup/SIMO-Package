@@ -1,5 +1,5 @@
 function N0n = DersOneBasisFun(p, KntVect, ith, Pts, n)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------------------------------------------------------------------
 % Compute derivatives of basis function Nip
 %-------------------------------------------------------------
 % Input:
@@ -13,7 +13,24 @@ function N0n = DersOneBasisFun(p, KntVect, ith, Pts, n)
 %       N0n: basis functions and their derivatives
 % ------------------------------------------------------------
 % Based on Algorithm A2.5 [The NURBS BOOK, p.76].
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------------------------------------------------------------------
+
+%{
+Copyright (C) <2014-2016>  <Khanh Chau-Nguyen, Hung Nguyen-Xuan>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}
 
 N0n = zeros(numel(Pts), n + 1);
 

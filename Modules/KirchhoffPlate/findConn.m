@@ -1,7 +1,7 @@
-function [AeqIn] = incompresibility(sdof,Bstrain,totalGP)
-% function [AeqIn] = incompresibility(sdof,Bstrain,totalGP)
+function Conn = findConn(NURBS, Knt, dir)
+% function Conn = findConn(NURBS, Knt, dir)
 %{
-Copyright (C) <2014-2016>  <Hung Nguyen-Xuan, Khanh Chau-Nguyen>
+Copyright (C) <2014-2016>  <Khanh Chau-Nguyen, Hung Nguyen-Xuan>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,11 +17,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 %}
 
-% incompresibility condition at every gauss point
-AeqIn = sparse(totalGP,sdof);
-for i = 1:totalGP
-    Bx = Bstrain{i}(1,:); 
-    By = Bstrain{i}(2,:);
-    AeqIn(i,:) = Bx + By; 
-   clear Bx By;
+mcp = NURBS.NCtrlPts(1);
+ncp = NURBS.NCtrlPts(2);
+k = FindSpan(NURBS.NCtrlPts(1), NURBS.Order(dir), Knt, NURBS.KntVect{dir});
+FDofs = sub2ind([mcp, ncp], (k - NURBS.Order(dir) - 1) * ones(1, ncp), 1 : ncp)';
+SDofs = sub2ind([mcp, ncp], (k - NURBS.Order(dir)) * ones(1, ncp), 1 : ncp)';
+TDofs = sub2ind([mcp, ncp], (k - NURBS.Order(dir) + 1) * ones(1, ncp), 1 : ncp)';
+
+Conn = [FDofs SDofs; SDofs TDofs];
 end

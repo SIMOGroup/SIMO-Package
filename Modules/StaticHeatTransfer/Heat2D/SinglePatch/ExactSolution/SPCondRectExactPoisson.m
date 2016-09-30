@@ -1,5 +1,5 @@
-function u2 = ExactPoissonSol(s, xVal, yVal, aVal, bVal, nVal, mVal)
-% u2 = ExactPoissonSol(s, xVal, yVal, aVal, bVal, nVal, mVal)
+function u2 = SPCondRectExactPoisson(s, xVal, yVal, aVal, bVal, nVal, mVal)
+% function u2 = SPCondRectExactPoisson(s, xVal, yVal, aVal, bVal, nVal, mVal)
 % Evaluate homogenous Poisson solution
 % ---------------------------------------------------------------
 % Input:
@@ -14,6 +14,24 @@ function u2 = ExactPoissonSol(s, xVal, yVal, aVal, bVal, nVal, mVal)
 % Output:
 %       u2: solution of Poisson equation at given values
 % -------------------------------------------------------------
+
+%{
+Copyright (C) <2014-2016>  <Khanh Chau-Nguyen, Hung Nguyen-Xuan>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%}
+
 syms x y a b m n
 % fourier coefficients
 nmrtr = 4 * (int(int(s * sin((n * pi * x) / a) * sin((m * pi * y) / b), x, [0, a]), y, [0, b] ));
