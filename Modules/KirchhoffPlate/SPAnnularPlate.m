@@ -89,8 +89,8 @@ disp([num2str(toc),'  Imposing essential boundary conditions'])
 h = @(x, y) 0;
 
 cp1 = Mesh.Boundary(1).Dofs;
-cp2 = Mesh.Boundary(1).NextLayerDofs;
-cp3 = Mesh.Boundary(2).NextLayerDofs;
+cp2 = Mesh.Boundary(1).NextLayerDofs.CompDofs{1};
+cp3 = Mesh.Boundary(2).NextLayerDofs.CompDofs{1};
 coupledNodes1 = [cp3 cp1; cp1 cp2];
 coupledNodes2 = findConn(Surf, 0.25, 1);
 coupledNodes3 = findConn(Surf, 0.5, 1);
@@ -110,8 +110,8 @@ end
 % Outer curve
 [u4, Dofs4] = projDrchltBdryVals(Surf, Mesh, h, 4, 'PLATE', GNum);
 
-NextDofs3 = GNum(Mesh.Boundary(3).NextLayerDofs);
-NextDofs4 = GNum(Mesh.Boundary(4).NextLayerDofs);
+NextDofs3 = GNum(Mesh.Boundary(3).NextLayerDofs.CompDofs{1});
+NextDofs4 = GNum(Mesh.Boundary(4).NextLayerDofs.CompDofs{1});
 
 BCIdx = unique([Dofs3; NextDofs3; Dofs4; NextDofs4]);
 BCVal = [u3; zeros(numel(u3), 1); u4; zeros(numel(u4), 1)];
