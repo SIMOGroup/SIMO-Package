@@ -85,25 +85,25 @@ if strcmp(LAB, 'HFLUX') || strcmp(LAB, 'hflux') || strcmp(LAB, 'HFlux') || strcm
     if nargin == 9 && isvector(varargin{:}) % coupling dofs or multiple patches of thermal or plate problem
         LDofs = varargin{:}(MeshBdry.Dofs);
     else
-        LDofs = MeshBdry.Dofs;
+        LDofs = MeshBdry.Dofs(:);
     end
 elseif strcmp(LAB, 'FX') || strcmp(LAB, 'fx') || strcmp(LAB, 'Fx')
     if nargin == 9 && isvector(varargin{:}) % coupling dofs or multiple patches of structural problem
         LDofs = varargin{:}(MeshBdry.CompDofs{1});
     else
-        LDofs = MeshBdry.CompDofs{1};
+        LDofs = MeshBdry.CompDofs{1}(:);
     end
 elseif strcmp(LAB, 'FY') || strcmp(LAB, 'fy') || strcmp(LAB, 'Fy')
     if nargin == 9 && isvector(varargin{:})
         LDofs = varargin{:}(MeshBdry.CompDofs{2});
     else
-        LDofs = MeshBdry.CompDofs{2};
+        LDofs = MeshBdry.CompDofs{2}(:);
     end
 elseif strcmp(LAB, 'FZ') || strcmp(LAB, 'fz') || strcmp(LAB, 'Fz')
     if nargin == 9 && isvector(varargin{:})
         LDofs = varargin{:}(MeshBdry.CompDofs{3});
     else
-        LDofs = MeshBdry.CompDofs{3};
+        LDofs = MeshBdry.CompDofs{3}(:);
     end
 end
 if NURBSBdry.Dim == 1
